@@ -1,4 +1,4 @@
-export type TodoFilter = {
+export interface TodoFilter {
   label: string;
   value: VISIBILITY_FILTER;
 }

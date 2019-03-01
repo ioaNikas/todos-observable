@@ -1,7 +1,11 @@
-<section *ngIf="activeFilter == 'All'">
+<section *ngIf="activeFilter == 'All' || activeFilter == null">
     <app-todo *ngFor="let todo of todos$ | async" [todo]="todo" (complete)="complete($event)" (delete)="delete($event)"></app-todo>
 </section>
 
 <section *ngIf="activeFilter == 'Active'">
+    <app-todo *ngFor="let todo of activeTodos$ | async" [todo]="todo" (complete)="complete($event)" (delete)="delete($event)"></app-todo>
+</section>
+
+<section *ngIf="activeFilter == 'Completed'">
     <app-todo *ngFor="let todo of completedTodos$ | async" [todo]="todo" (complete)="complete($event)" (delete)="delete($event)"></app-todo>
 </section>

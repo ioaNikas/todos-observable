@@ -13,9 +13,9 @@ import { ID } from '@datorama/akita';
 export class ListComponent implements OnInit {
 
   @Input() activeFilter: string;
-  todos$;
-  completedTodos$;
-  activeTodos$;
+  todos$: Observable<Todo[]>;
+  completedTodos$: Observable<Todo[]>;
+  activeTodos$: Observable<Todo[]>;
 
   constructor(
     private todoQuery: TodoQuery,
