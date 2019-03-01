@@ -1,0 +1,9 @@
+<section>
+  <div>
+    <select>
+      <option (click)="applyFilter(filterValue.value)" #filterValue [ngValue]="filter.value" *ngFor="let filter of filters; let i = index">{{filter.label}}</option>
+    </select>
+    <button>Filter</button>
+  </div>
+  <app-list [activeFilter]="activeFilter" (applyFilter)="applyFilter($event)"></app-list>
+</section>

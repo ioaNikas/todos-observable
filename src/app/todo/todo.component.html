@@ -1,0 +1,8 @@
+<section>
+  <div class="flex">
+    <span>{{ todo.title }} is {{ todo.isCompleted }}</span>
+    <button *ngIf="todo.isCompleted == false" (click)="complete.emit(todo)">Set to TRUE</button>
+    <button *ngIf="todo.isCompleted == true" (click)="complete.emit(todo)">Set to FALSE</button>
+    <button (click)="delete.emit(todo)">Delete</button>
+  </div>
+</section>
